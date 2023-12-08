@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import MoviesListPage from '../MoviesListPage/MoviesListPage';
+import ActorListPage from '../ActorListPage/ActorListPage';
 import NavBar from '../../components/NavBar/NavBar';
+import LoginPage from '../LoginPage/LoginPage';
+import MovieDetailPage from '../MovieDetailPage/MovieDetailPage';
+
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -12,16 +14,16 @@ export default function App() {
   return (
     <main className="App">
       { user ?
-          <>
-            <NavBar />
-            <Routes>
-              {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
-            </Routes>
-          </>
-          :
-          <AuthPage />
+        <>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<MoviesListPage />} />
+            <Route path="/actors" element={<ActorListPage />} />
+            <Route path="/movies/:movieName" element={<MovieDetailPage />} />
+          </Routes>
+        </>
+        :
+        <LoginPage />
       }
     </main>
   );
