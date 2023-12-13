@@ -1,0 +1,15 @@
+.movie-card {
+    display: flex;
+    height: 300px;
+    margin-bottom: 20px;
+    border: solid 1px black;
+}
+
+.card-data {
+    width: 300px;
+}
+
+.card-img {
+    height: 100%;
+}
+

@@ -1,6 +1,7 @@
 import { movies } from '../../data.js';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { Link } from 'react-router-dom';
+import './MovieListPage.css';
 
 export default function MovieListPage() {
   return (
